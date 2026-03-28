@@ -1,30 +1,50 @@
 {
   "expo": {
-    "name": "Pocket-Check",
-    "slug": "Pocket-Check",
+    "name": "Pocket Check",
+    "slug": "pocket-check",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "scheme": "pocket-check",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#F5F3EF"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pocketcheck.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Pocket Check uses your location to remind you to verify your belongings when you've been stationary.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Pocket Check uses your location in the background to remind you to check your pockets when leaving a location.",
+        "UIBackgroundModes": ["location", "fetch"]
+      }
     },
     "android": {
-      "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
-      },
-      "predictiveBackGestureEnabled": false
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION"
+      ]
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Pocket Check uses your location to remind you to verify your belongings when you've been stationary.",
+          "locationAlwaysAndWhenInUsePermission": "Pocket Check uses background location to remind you to check your pockets when leaving a location.",
+          "isAndroidBackgroundLocationEnabled": true,
+          "isAndroidForegroundServiceEnabled": true
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png"
+        }
+      ]
+    ]
   }
 }
