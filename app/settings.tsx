@@ -162,7 +162,7 @@ export default function SettingsScreen() {
         <View style={styles.card}>
           <TouchableOpacity
             style={styles.row}
-            onPress={() => Linking.openURL('https://pocketchecker.app/privacy.html')}
+            onPress={() => Linking.openURL('https://tltoan.github.io/pocket-checker/privacy.html')}
             activeOpacity={0.6}
           >
             <Text style={styles.rowLabel}>Privacy Policy</Text>
@@ -171,7 +171,7 @@ export default function SettingsScreen() {
           <View style={styles.divider} />
           <TouchableOpacity
             style={styles.row}
-            onPress={() => Linking.openURL('https://pocketchecker.app/terms.html')}
+            onPress={() => Linking.openURL('https://tltoan.github.io/pocket-checker/terms.html')}
             activeOpacity={0.6}
           >
             <Text style={styles.rowLabel}>Terms of Use</Text>
